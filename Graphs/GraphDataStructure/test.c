@@ -58,6 +58,7 @@ int main(int argc, char **argv)
         foreach(g, i, matchSink, &i);
     }
 
+    print(g); 
 
     // Add edge between every vertex and every other vertex
     for(i = 0; i < TEST_SIZE; i++) {
@@ -75,6 +76,8 @@ int main(int argc, char **argv)
             assert(hasEdge(g, i, j) == 1);
         }
     }
+
+    print(g);
 
     // Free memory
     destroyGraph(g);

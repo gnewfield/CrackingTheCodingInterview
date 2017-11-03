@@ -29,3 +29,5 @@ int hasEdge(Graph graph, int u, int v);
 
 // Invoke f on all edges (u,v) with source u, supplying data as final parameter to f
 void foreach(Graph graph, int u, void (*f)(Graph graph, int u, int v, void *data), void *data);
+
+void print(Graph g);

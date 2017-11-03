@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include <assert.h>
+#include <stdio.h>
 
 #include "graph.h"
 
@@ -150,4 +151,17 @@ void foreach(Graph g, int source, void (*f)(Graph g, int source, int sink, void 
     for(int v = 0; v < u->d; v++) {
         f(g, source, u->list[v], data);
     }
+}
+
+void print(Graph g)
+{
+    puts("digraph G {");
+
+    for(int u = 0; u < g->n; u++) {
+        for(int v = 0; v < g->alist[u]->d; v++) {
+            printf("%d -> %d;\n", u, g->alist[u]->list[v]);
+        }
+    }
+
+    puts("}");
 }
